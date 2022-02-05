@@ -1,0 +1,24 @@
+// COLORS
+$yellowLight: #ffd2a6;
+$yellow: #f9b672;
+$yellowDark: #e5a15c;
+$lightBlue: #3696cc;
+$blueLight: #094863;
+$blue: #063144;
+$blueDark: #031c26;
+$blueDarker: #00060b;
+$waikawa: #5969A9;
+$fern: #54B872;
+$geraldine: #F98472;
+$brown: #362714;
+$brownDark: #202020;
+$white: #FFF;
+$black: #000;
+$gradientYellow: linear-gradient(180deg, $yellowLight 0%, $yellowDark 100%);
+$gradientBlue: linear-gradient(180deg, $blueLight 0%, $blue 100%);
+$gradientBlueDark: linear-gradient(180deg, $blue 0%, $blueDark 100%);
+// TYPEFACES
+$primaryFont: 'Poppins',
+sans-serif;
+$secondaryFont: 'Chewy',
+display;
