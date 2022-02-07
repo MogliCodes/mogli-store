@@ -6,31 +6,47 @@
         <h1>Payment Information</h1>
       </div>
       <div class="container">
-        <div class="payment-option">
-          <h2>Invoice</h2>
-        </div>
-        <div class="payment-option">
-          <h2>Paypal</h2>
-        </div>
-        <div class="payment-option">
-          <h2>Credit Card</h2>
-        </div>
+        <CheckoutPaymentOptions
+          v-for="option in getPaymentOptions"
+          :key="option.id"
+          :option="option"
+        />
+        <base-button
+          @click.native="setPaymentOption"
+          link="/checkout/preview"
+        >Continue</base-button>
       </div>
     </section>
   </main>
 </template>
 
 <script>
+import BaseButton from '../../components/base/BaseButton.vue'
 import CheckoutBreadcrumbs from '../../components/checkout/CheckoutBreadcrumbs.vue'
+import CheckoutPaymentOptions from '../../components/checkout/CheckoutPaymentOptions.vue'
+
+import { mapGetters } from 'vuex'
+
 export default {
-  components: { CheckoutBreadcrumbs },
+  components: { BaseButton, CheckoutBreadcrumbs, CheckoutPaymentOptions },
+  computed: {
+    ...mapGetters('checkout', ['getPaymentOptions']),
+  },
+  data() {
+    return {
+      selected: null,
+    }
+  },
+  methods: {
+    setPaymentOption() {
+      this.$store.commit('checkout/SET_PAYMENT_OPTION', this.selected)
+    },
+  },
+  mounted() {
+    $nuxt.$on('select-option', (payload) => {
+      console.log(payload)
+      this.selected = payload
+    })
+  },
 }
 </script>
-
-<style lang="scss" scoped>
-.payment-option {
-  background: #eee;
-  padding: 2rem;
-  margin-bottom: 1px;
-}
-</style>

@@ -8,7 +8,8 @@
         <div>
           <TheNavigation />
         </div>
-        <div>
+        <div class="flex">
+          <AccountWidget />
           <CartWidget />
         </div>
       </div>
@@ -19,10 +20,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import AccountWidget from '../account/AccountWidget.vue'
 import CartWidget from '../cart/CartWidget.vue'
 import TheNavigation from './TheNavigation.vue'
 export default {
-  components: { TheNavigation, CartWidget },
+  components: { TheNavigation, CartWidget, AccountWidget },
   computed: {
     ...mapGetters('cart', ['getProductCount']),
   },

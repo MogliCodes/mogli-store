@@ -103,7 +103,7 @@ export default {
     background: $yellowLight;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     border-top-right-radius: 30px;
     border-radius: 30px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.125);
@@ -113,7 +113,7 @@ export default {
     padding-left: 2rem;
     padding-right: 2rem;
     transform: scale(0);
-    transform-origin: top right;
+    transform-origin: top left;
     transition: all 0.35s ease;
     pointer-events: none;
 

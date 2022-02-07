@@ -3,7 +3,7 @@
     <section class="panel">
       <div class="container">
         <h1>Delivery</h1>
-        <div>
+        <div class="form-container">
           <form @submit.prevent>
             <div>
               <label for="">Firstname</label>
@@ -41,15 +41,14 @@
               >
             </div>
           </form>
+          <div class="text-right">
+            <base-button
+              @click.native="submitDeliveryAddress"
+              link="/checkout/payment"
+            >Continue</base-button>
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="text-right">
-          <base-button
-            @click.native="submitDeliveryAddress"
-            link="/checkout/payment"
-          >Continue</base-button>
-        </div>
+
       </div>
     </section>
   </main>
@@ -109,7 +108,7 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-form {
+.form-container {
   width: 50%;
 }
 

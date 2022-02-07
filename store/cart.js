@@ -49,7 +49,14 @@ export const mutations = {
     ADD_TO_SUM(state, product) {
         state.cart.sum = state.cart.sum + product.price;
         state.cart.sum = parseFloat(state.cart.sum.toFixed(2))
-
+    },
+    RESET_CART(state) {
+        // $nuxt.$set(state.products, [])
+        // $nuxt.$set(state.count, 0)
+        // $nuxt.$set(state.sum, 0)
+        state.cart.products = [];
+        state.cart.count = 0;
+        state.cart.sum = 0;
     }
 }
 

@@ -8,6 +8,7 @@
 <script>
 import TheHeader from '../components/layout/TheHeader.vue'
 export default {
+  name: 'default',
   components: { TheHeader },
 }
 </script>
@@ -70,6 +71,10 @@ main {
   &--special {
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   }
+}
+
+.flex {
+  display: flex;
 }
 
 .text-right {
